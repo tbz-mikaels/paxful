@@ -1,0 +1,50 @@
+version: "3.5"
+services:
+  paxful_webserver:
+    image: nginx
+    container_name: paxful_webserver
+    restart: always
+    volumes:
+      - ./laravel-app:/var/www
+      - ./configuration/nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 80:80
+     # - 443:443
+    networks:
+      - paxful-network
+    links:
+      - paxful_laravel  
+  paxful_laravel:
+    build:
+      context: ./laravel-app
+      dockerfile: Dockerfile     
+    container_name: paxful_laravel
+    volumes:
+      - ./laravel-app:/var/www
+      - ./configuration/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    links:
+      - paxful_mysql
+    networks:
+      - paxful-network       
+  paxful_mysql:
+    image: mysql:5.7.22
+    container_name: paxful_mysql  
+    restart: always
+    environment:
+      MYSQL_DATABASE: paxful
+      MYSQL_ROOT_PASSWORD: 12345678
+    volumes:
+      - ./dbdata/mysql:/var/lib/mysql/
+    networks:
+      - paxful-network
+  paxful_adminer:
+    image: adminer
+    container_name: paxful_adminer  
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - paxful-network
+networks:
+  paxful-network:
+    driver: bridge
