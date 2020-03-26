@@ -1,7 +1,5 @@
-/vendor
 .env
 .idea
-/public/build/*
 *.*.map
 !/storage/fonts/.gitkeep
 /storage/fonts/*.ttf
@@ -29,3 +27,5 @@ node_modules/
 /.project
 /.settings/*
 /nbproject/private/
+/vendor/
+/public/js/
