@@ -7,7 +7,7 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path='/trades' component={TradeIndex} />
+                <Route exact path='/' component={TradeIndex} />
             </Switch>
         </BrowserRouter>
     );
