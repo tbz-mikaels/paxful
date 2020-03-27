@@ -65,7 +65,7 @@ class Trade extends Model
 
     public function getStatusColorAttribute(): string
     {
-        return $this->status === self::PAID ? 'online' : 'away'; /*busy, ''*/
+        return strtolower($this->status) === strtolower(self::PAID) ? 'online' : 'away';
     }
 
     public function getAvatarAttribute(): string

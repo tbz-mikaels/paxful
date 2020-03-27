@@ -44,7 +44,7 @@ class List extends PureComponent {
                                         onClick={() => this.loadTrade(trade.id)}
                                     >
                                         <div className="wrap">
-                                            <span className="contact-status busy"></span>
+                                            <span className={"contact-status " + trade.statusColor}></span>
                                             <img src={trade.avatar} alt=""/>
                                             <div className="meta">
                                                 <p className="name"
@@ -52,7 +52,12 @@ class List extends PureComponent {
                                                     {trade.first_name} is buying
                                                 </p>
                                                 <p className="name" style={{paddingTop: '3px'}}>
-                                                    {trade.payment_method}
+                                                    {trade.payment_method} (
+                                                    <small
+                                                        style={{fontStyle: 'oblique', fontSize: '12px'}}>
+                                                        {trade.status}
+                                                    </small>
+                                                    )
                                                 </p>
                                                 <p className="preview">
                                                     {trade.amount} USD ({trade.amount} BTC)
