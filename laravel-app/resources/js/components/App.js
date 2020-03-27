@@ -1,22 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Header from "./Header";
-import List from "./Trades/List";
+import TradeIndex from "./Trades";
 
 function App() {
     return (
         <BrowserRouter>
-            <div className="container">
-                <Header/>
-                <Switch>
-                    <Route exact path='/trades' component={List} />
-                </Switch>
-            </div>
+            <Switch>
+                <Route exact path='/trades' component={TradeIndex} />
+            </Switch>
         </BrowserRouter>
     );
 }
 
 export default App;
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('frame'));

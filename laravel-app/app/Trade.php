@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 /**
@@ -34,7 +35,7 @@ class Trade extends Model
         'status',
     ];
 
-    protected $appends = ['first_name', 'reputation'];
+    protected $appends = ['first_name', 'reputation', 'statusColor', 'avatar'];
 
     public function rules()
     {
@@ -60,5 +61,25 @@ class Trade extends Model
     public function getReputationAttribute(): array
     {
         return [37, -1];
+    }
+
+    public function getStatusColorAttribute(): string
+    {
+        return $this->status === self::PAID ? 'online' : 'away'; /*busy, ''*/
+    }
+
+    public function getAvatarAttribute(): string
+    {
+        return url('/') . Storage::url('public/images/avatar.png');
+    }
+
+    public function getPaymentMethodAttribute($value): string
+    {
+        return ucwords(strtolower(str_replace('_', ' ', $value)));
+    }
+
+    public function getStatusAttribute($value): string
+    {
+        return ucwords(strtolower(str_replace('_', ' ', $value)));
     }
 }

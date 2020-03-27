@@ -9,6 +9,7 @@ class List extends PureComponent {
         super();
 
         this.state = {
+            selectedId: null,
             trades: [],
             trade: {}
         }
@@ -20,35 +21,53 @@ class List extends PureComponent {
             .catch((error) => console.log(error));
     }
 
-    loadTrade(id) {
-        TradesService.get(id)
-            .then((trade) => this.setState({trade}))
+    loadTrade(selectedId) {
+        TradesService.get(selectedId)
+            .then((trade) => this.setState({trade, selectedId}))
             .catch((error) => console.log(error));
     }
 
     render() {
-        const {trades, trade} = this.state;
+        const {trades, trade, selectedId} = this.state;
 
-        return (
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
+        return <span>
+            <div id="sidepanel">
+                <div id="search"></div>
+                <div id="contacts">
+                    <ul>
                         {
                             trades.map((trade) => {
                                 return (
                                     <li
                                         key={trade.id}
-                                        onClick={() => this.loadTrade(trade.id)}>
-                                        {trade.buyer_username}
+                                        className={selectedId === trade.id ? 'contact active' : 'contact'}
+                                        onClick={() => this.loadTrade(trade.id)}
+                                    >
+                                        <div className="wrap">
+                                            <span className="contact-status busy"></span>
+                                            <img src={trade.avatar} alt=""/>
+                                            <div className="meta">
+                                                <p className="name"
+                                                   style={{fontSize: '12px', color: 'gray'}}>
+                                                    {trade.first_name} is buying
+                                                </p>
+                                                <p className="name" style={{paddingTop: '3px'}}>
+                                                    {trade.payment_method}
+                                                </p>
+                                                <p className="preview">
+                                                    {trade.amount} USD ({trade.amount} BTC)
+                                                </p>
+                                            </div>
+                                        </div>
                                     </li>
                                 )
                             })
                         }
-                        <Details trade={trade}/>
-                    </div>
+                    </ul>
                 </div>
             </div>
-        );
+                <Details trade={trade}/>
+        </span>
     }
 }
 
