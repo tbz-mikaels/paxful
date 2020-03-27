@@ -49,16 +49,21 @@ COPY --chown=www:www . /var/www
 # Change current user to www
 USER www
 
-
-
-
-
+#working directory
 WORKDIR /var/www
+
+# create storage shortcut in public folder
+RUN php artisan storage:link
+
 #install composer
-#composer install
+RUN composer install
+
+#database seeder
+RUN php artisan db:seed --class=TradeSeeder
+
 #install node modules and run dev
-#RUN npm install
-#RUN npm run development
+RUN npm install
+RUN npm run development
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
