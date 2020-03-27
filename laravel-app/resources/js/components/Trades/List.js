@@ -1,5 +1,4 @@
 import React, {Component, PureComponent} from 'react'
-import {Link} from 'react-router-dom'
 import TradesService from "../../../services/API/TradesService";
 import Details from "./Details";
 
@@ -60,7 +59,7 @@ class List extends PureComponent {
                                                     )
                                                 </p>
                                                 <p className="preview">
-                                                    {trade.amount} USD ({trade.amount} BTC)
+                                                    {trade.amount} USD ({trade.btc_amount} BTC)
                                                 </p>
                                             </div>
                                         </div>

@@ -27,6 +27,7 @@ class Trade extends Model
 
     const ALLOWED_METHODS = [self::AMAZON_GIFT_CARD, self::I_TUNES_GIFT_CARD, self::PAY_PAL];
     const ALLOWED_STATUS = [self::PAID, self::NOT_PAID];
+    const BIT_COIN_VALUE = 8834;
 
     protected $fillable = [
         'buyer_username',
@@ -35,7 +36,7 @@ class Trade extends Model
         'status',
     ];
 
-    protected $appends = ['first_name', 'reputation', 'statusColor', 'avatar'];
+    protected $appends = ['first_name', 'reputation', 'btc_amount', 'statusColor', 'avatar'];
 
     public function rules()
     {
@@ -81,5 +82,10 @@ class Trade extends Model
     public function getStatusAttribute($value): string
     {
         return ucwords(strtolower(str_replace('_', ' ', $value)));
+    }
+
+    public function getBtcAmountAttribute($value)
+    {
+        return number_format((float)$this->amount / self::BIT_COIN_VALUE, 8, '.', '');
     }
 }
