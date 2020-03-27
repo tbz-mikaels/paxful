@@ -34,6 +34,8 @@ class Trade extends Model
         'status',
     ];
 
+    protected $appends = ['first_name', 'reputation'];
+
     public function rules()
     {
         return [
@@ -48,5 +50,15 @@ class Trade extends Model
                 Rule::in(self::ALLOWED_STATUS),
             ]
         ];
+    }
+
+    public function getFirstNameAttribute(): string
+    {
+        return 'Chanaaar';
+    }
+
+    public function getReputationAttribute(): array
+    {
+        return [37, -1];
     }
 }
