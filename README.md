@@ -1,4 +1,4 @@
-1- Clone repo using git@github.com:tbz-mikaels/paxful.git <br>
+1- Clone repo using git clone https://github.com/tbz-mikaels/paxful.git <br>
 2- Navigate to paxful directory<br>
 3- Run docker compose build<br>
 4 Run docker-compose up -d<br>
