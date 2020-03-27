@@ -1,6 +1,7 @@
 import React, {Component, PureComponent} from 'react'
 import TradesService from "../../../services/API/TradesService";
 import Details from "./Details";
+import {isEmpty} from "../../../services/Utilities";
 
 class List extends PureComponent {
 
@@ -31,7 +32,17 @@ class List extends PureComponent {
 
         return <span>
             <div id="sidepanel">
-                <div id="search"></div>
+                <div id="search">
+                    {
+                        !isEmpty(trade) && <span>
+                            <p># of trades: {trade.id}</p><br/>
+                            <p>Trade Status: {trade.status}</p><br/>
+                            <p>Trade Hash: {trade.trade_hash}</p><br/>
+                            <p>Amount USD: {trade.amount}</p><br/>
+                            <p>Amount BTC: {trade.btc_amount}</p><br/>
+                        </span>
+                    }
+                </div>
                 <div id="contacts">
                     <ul>
                         {
