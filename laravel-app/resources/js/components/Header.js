@@ -7,8 +7,6 @@ const Header = () => (
             <div className="card">
                 <div className="card-header"><Link className='navbar-brand' to='/trades'>Trades</Link></div>
 
-                <div className="card-body">Trades List</div>
-
             </div>
         </div>
     </div>

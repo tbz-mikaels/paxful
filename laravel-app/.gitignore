@@ -1,6 +1,12 @@
 .env
 .idea
 *.*.map
+/node_modules
+/public/*.js
+/public/js/*.js
+/public/css/*.css
+/public/hot
+/storage/*.key
 !/storage/fonts/.gitkeep
 /storage/fonts/*.ttf
 /storage/fonts/*.php
