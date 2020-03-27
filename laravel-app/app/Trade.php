@@ -36,7 +36,7 @@ class Trade extends Model
         'status',
     ];
 
-    protected $appends = ['first_name', 'reputation', 'btc_amount', 'statusColor', 'avatar'];
+    protected $appends = ['first_name', 'reputation', 'btc_amount', 'statusColor', 'avatar', 'trade_hash'];
 
     public function rules()
     {
@@ -84,8 +84,12 @@ class Trade extends Model
         return ucwords(strtolower(str_replace('_', ' ', $value)));
     }
 
-    public function getBtcAmountAttribute($value)
+    public function getBtcAmountAttribute()
     {
         return number_format((float)$this->amount / self::BIT_COIN_VALUE, 8, '.', '');
+    }
+    public function getTradeHashAttribute()
+    {
+        return uniqid();
     }
 }
