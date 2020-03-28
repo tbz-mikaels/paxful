@@ -46,22 +46,27 @@ class List extends PureComponent {
                                     >
                                         <div className="wrap">
                                             <span className={"contact-status " + trade.statusColor}></span>
-                                            <img src={trade.avatar} alt=""/>
+                                            {/*<img src={trade.avatar} alt=""/>*/}
                                             <div className="meta">
                                                 <p className="name"
                                                    style={{fontSize: '12px'}}>
                                                     {trade.first_name} is buying
                                                 </p>
                                                 <p className="name" style={{paddingTop: '3px'}}>
-                                                    {trade.payment_method} (
-                                                    <small
-                                                        style={{fontStyle: 'oblique', fontSize: '12px'}}>
-                                                        {trade.status}
-                                                    </small>
-                                                    )
+                                                    {trade.payment_method}
                                                 </p>
                                                 <p className="preview">
                                                     {trade.amount} USD ({trade.btc_amount} BTC)
+                                                </p>
+                                            </div>
+                                            <div style={{float: 'right', margin: '-50px -10px 0px 0px'}}>
+                                                <img src={trade.avatar} alt=""/>
+                                                <p
+                                                    className="meta"
+                                                    style={{
+                                                        color: trade.status === 'Paid' ? '#2ecc71' : ''
+                                                    }}>
+                                                    {trade.status}
                                                 </p>
                                             </div>
                                         </div>
