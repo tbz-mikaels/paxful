@@ -2,6 +2,7 @@ import React, {Component, PureComponent} from 'react'
 import TradesService from "../../../services/API/TradesService";
 import Details from "./Details";
 import {isEmpty} from "../../../services/Utilities";
+import Info from "./Info";
 
 class List extends PureComponent {
 
@@ -30,19 +31,9 @@ class List extends PureComponent {
     render() {
         const {trades, trade, selectedId} = this.state;
 
-        return <span>
+        return <React.Fragment>
             <div id="sidepanel">
-                <div id="search">
-                    {
-                        !isEmpty(trade) && <span>
-                            <p># of trades: {trade.id}</p><br/>
-                            <p>Trade Status: {trade.status}</p><br/>
-                            <p>Trade Hash: {trade.trade_hash}</p><br/>
-                            <p>Amount USD: {trade.amount}</p><br/>
-                            <p>Amount BTC: {trade.btc_amount}</p><br/>
-                        </span>
-                    }
-                </div>
+                <div id="search"></div>
                 <div id="contacts">
                     <ul>
                         {
@@ -58,7 +49,7 @@ class List extends PureComponent {
                                             <img src={trade.avatar} alt=""/>
                                             <div className="meta">
                                                 <p className="name"
-                                                   style={{fontSize: '12px', color: 'gray'}}>
+                                                   style={{fontSize: '12px'}}>
                                                     {trade.first_name} is buying
                                                 </p>
                                                 <p className="name" style={{paddingTop: '3px'}}>
@@ -81,8 +72,9 @@ class List extends PureComponent {
                     </ul>
                 </div>
             </div>
-                <Details trade={trade}/>
-        </span>
+            <Details trade={trade}/>
+            <Info trade={trade}/>
+        </React.Fragment>
     }
 }
 

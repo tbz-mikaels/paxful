@@ -4,11 +4,7 @@ import '../../../css/trade.scss'
 
 class TradeIndex extends PureComponent {
     render() {
-        return (
-            <span>
-                <List/>
-            </span>
-        );
+        return <List/>;
     }
 }
 

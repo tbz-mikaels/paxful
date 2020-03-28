@@ -4,9 +4,8 @@ class MessageSend extends PureComponent {
     render() {
         return (<div className="message-input">
                 <div className="wrap">
-                    <input type="text" placeholder="Write your message..."/>
-                    <i className="fa fa-paperclip attachment" aria-hidden="true"></i>
-                    <button className="submit"><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    <input type="text" placeholder="Type your message..."/>
+                    <button className="submit" >SEND</button>
                 </div>
             </div>
         );

@@ -20,6 +20,7 @@ class Details extends Component {
 
         return (!isEmpty(trade) && <div className="content">
                 <Header trade={trade}/>
+                <hr/>
                 <Chat trade={trade}/>
                 <MessageSend/>
             </div>

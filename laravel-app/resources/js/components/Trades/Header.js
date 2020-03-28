@@ -5,17 +5,14 @@ class Header extends PureComponent {
         const {trade} = this.props;
 
         return (<div className="contact-profile">
-                <img src={trade.avatar} alt=""/>
-                <p>{trade.payment_method}</p>
-                <span
-                    style={{
-                        float: 'right',
-                        marginRight: '10px'
-                    }}>
+                <p>
+                    <span className="payment-header">{trade.payment_method}</span><br/>
+                    <span className="trader-header">
                         {trade.first_name} &nbsp;
-                    <span style={{color: '#2ecc71'}}>+{trade.reputation[0]}</span> / &nbsp;
-                    <span style={{color: '#e74c3c'}}>{trade.reputation[1]}</span>
+                        <span style={{color: '#2ecc71'}}>+{trade.reputation[0]}</span> / &nbsp;
+                        <span style={{color: '#e74c3c'}}>{trade.reputation[1]}</span>
                     </span>
+                </p>
             </div>
         );
     }
