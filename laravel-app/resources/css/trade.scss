@@ -41,7 +41,7 @@ body {
     float: left;
     min-width: 280px;
     max-width: 340px;
-    width: 40%;
+    width: 24%;
     height: 100%;
     background: white;
     color: gray;
@@ -119,6 +119,12 @@ body {
 }
 
 #frame .right-panel {
+    float: right !important;
+    max-width: 360px !important;
+
+    //width: 25% !important;
+    //max-width: none !important;
+
     img {
         width: 50px;
         border-radius: 50%;
@@ -714,26 +720,75 @@ span.status-circle:before {
 }
 
 #frame .content {
-    float: right;
-    width: 45%;
+    float: left;
+    width: calc(58% - 100px);
     height: 100%;
     overflow: hidden;
     position: relative;
     background: #f5f7fa;
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 768px) {
     #frame .content {
-        width: calc(100% - 58px);
+        width: calc(47% - 100px) !important;
         //min-width: 300px !important;
+    }
+    #frame .right-panel {
+        min-width: 28% !important;
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 375px) {
     #frame .content {
-        width: calc(100% - 340px);
+        width: calc(76% - 100px) !important;
+        //min-width: 300px !important;
+    }
+    #frame .right-panel {
+        min-width: 36% !important;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    #frame .content {
+        width: calc(50% - 100px);
+        //min-width: 300px !important;
+    }
+    #frame .right-panel {
+        min-width: 28% !important;
+    }
+}
+
+@media screen and (min-device-width: 1625px) {
+    #frame .content {
+        width: calc(78% - 340px);
+    }
+}
+
+@media screen and (min-device-width: 1300px) {
+    #frame .content {
+        width: calc(74% - 340px);
+    }
+}
+
+@media screen and (min-device-width: 1110px) {
+    #frame .content {
+        width: calc(75% - 340px);
+    }
+    #frame .right-panel {
+        min-width: 10px !important;
+    }
+}
+
+//@media screen and (min-device-width: 900px) {
+//    #frame .content {
+//        background-color: red;
+//        width: calc(75% - 100px);
+//    }
+//    #frame .right-panel {
+//        background-color: green !important;
+//        width: 30% !important;
+//    }
+//}
 
 #frame .content .contact-profile {
     width: 100%;
