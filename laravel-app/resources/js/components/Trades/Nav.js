@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import {Link} from "react-router-dom";
 
 class Nav extends PureComponent {
     render() {
@@ -31,6 +32,14 @@ class Nav extends PureComponent {
                         </li>
                     </ul>
                 </div>
+            </nav>
+            <nav className="nav nav-tabs" style={{color: 'gray'}}>
+                <a className="nav-item nav-link">Overview</a>
+                <Link to="#trades" className="nav-item nav-link active">Trades</Link>
+                <a className="nav-item nav-link">Disputes</a>
+                <a className="nav-item nav-link">Your Offers</a>
+                <a className="nav-item nav-link">My team</a>
+                <a className="nav-item nav-link">Trade History</a>
             </nav>
         </React.Fragment>
     }
