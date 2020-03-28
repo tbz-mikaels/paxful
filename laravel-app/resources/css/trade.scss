@@ -728,67 +728,64 @@ span.status-circle:before {
     background: #f5f7fa;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1625px) {
     #frame .content {
-        width: calc(47% - 100px) !important;
-        //min-width: 300px !important;
-    }
-    #frame .right-panel {
-        min-width: 28% !important;
+        width: calc(75% - 340px);
     }
 }
 
-@media screen and (max-width: 375px) {
-    #frame .content {
-        width: calc(76% - 100px) !important;
-        //min-width: 300px !important;
-    }
-    #frame .right-panel {
-        min-width: 36% !important;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    #frame .content {
-        width: calc(50% - 100px);
-        //min-width: 300px !important;
-    }
-    #frame .right-panel {
-        min-width: 28% !important;
-    }
-}
-
-@media screen and (min-device-width: 1625px) {
-    #frame .content {
-        width: calc(78% - 340px);
-    }
-}
-
-@media screen and (min-device-width: 1300px) {
+@media screen and (max-width: 1300px) {
     #frame .content {
         width: calc(74% - 340px);
     }
 }
 
-@media screen and (min-device-width: 1110px) {
+@media screen and (max-width: 1110px) {
     #frame .content {
         width: calc(75% - 340px);
     }
     #frame .right-panel {
-        min-width: 10px !important;
+        min-width: 10px;
     }
 }
 
-//@media screen and (min-device-width: 900px) {
-//    #frame .content {
-//        background-color: red;
-//        width: calc(75% - 100px);
-//    }
-//    #frame .right-panel {
-//        background-color: green !important;
-//        width: 30% !important;
-//    }
-//}
+@media screen and (max-width: 1000px) {
+    #frame .content {
+        width: calc(45% - 100px);
+        //min-width: 300px !important;
+    }
+    #frame .right-panel {
+        min-width: 25% !important;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #frame .content {
+        width: calc(52% - 100px);
+    }
+    #frame .right-panel {
+        min-width: 24% !important;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #frame .content {
+        //width: calc(70% - 100px);
+    }
+    #frame .right-panel {
+        //min-width: 35% !important;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    #frame .content {
+        //width: calc(76% - 100px);
+        //min-width: 300px !important;
+    }
+    #frame .right-panel {
+        //min-width: 36% !important;
+    }
+}
 
 #frame .content .contact-profile {
     width: 100%;
