@@ -19,6 +19,7 @@
     - composer install
     - php artisan storage:link
     - php artisan migrate --seed
+    - cp laravel-app/.env.example laravel-app/.env
     
 <li><b>Install JS dependencies:</b></li>
         
