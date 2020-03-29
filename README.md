@@ -31,6 +31,7 @@
 5- Visit mysql view
     
     http://localhost:8080/?server=paxful_mysql&username=root&db=paxful
+    Password: 12345678
 
 6- Stop docker by running:
 
