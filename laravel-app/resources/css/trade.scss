@@ -121,6 +121,7 @@ body {
 #frame .right-panel {
     float: right !important;
     max-width: 360px !important;
+    min-width: unset !important;
 
     //width: 25% !important;
     //max-width: none !important;
@@ -755,7 +756,7 @@ span.status-circle:before {
         //min-width: 300px !important;
     }
     #frame .right-panel {
-        min-width: 25% !important;
+        min-width: 25%;
     }
 }
 
@@ -764,26 +765,16 @@ span.status-circle:before {
         width: calc(52% - 100px);
     }
     #frame .right-panel {
-        min-width: 24% !important;
+        min-width: 24%;
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 735px) {
     #frame .content {
-        //width: calc(70% - 100px);
+        width: calc(65% - 100px);
     }
     #frame .right-panel {
-        //min-width: 35% !important;
-    }
-}
-
-@media screen and (min-width: 360px) {
-    #frame .content {
-        //width: calc(76% - 100px);
-        //min-width: 300px !important;
-    }
-    #frame .right-panel {
-        //min-width: 36% !important;
+        min-width: 38% !important;
     }
 }
 
@@ -970,9 +961,17 @@ span.status-circle:before {
     font-size: 12px;
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 640px) {
     #frame .content .message-input .wrap button {
         padding: 16px 0;
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    #frame .content .message-input .wrap button {
+        padding: 16px 0;
+        width: 74px;
     }
 }
 
