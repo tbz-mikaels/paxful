@@ -1,8 +1,33 @@
-1- Clone repo using git clone https://github.com/tbz-mikaels/paxful.git <br>
-2- Navigate to paxful directory<br>
-3 Run docker-compose up -d<br>
-4- Run docker exec -it paxful_laravel bash<br>
-5- Run php artisan migrate<br>
-6- Run php artisan db:seed --class=TradeSeeder<br>
-<br>
-Navigate to browser http://localhost/trades
+1- Clone repository using git clone command:
+
+    git clone https://github.com/tbz-mikaels/paxful.git
+
+2- Navigate to paxful directory which you recently cloned.
+
+3 Then run following command to create your local instance up and running: <br>
+
+<li><b>Build docker configuration and run the containers:</b></li>
+
+    docker-compose up -d
+
+<li><b>Open bash/terminal to run more commands inside:</b></li>
+
+    docker exec -it paxful_laravel bash
+
+<li><b>Install laravel dependencies, run migration and seed trades.</b></li>
+
+    - composer install
+    - php artisan storage:link
+    - php artisan migrate --seed
+    
+<li><b>Install JS dependencies:</b></li>
+        
+    npm install && npm run development
+      
+4- After that you can visit following url to see the app in action:
+
+    http://localhost
+
+5- Visit mysql view
+    
+    http://localhost:8080/?server=paxful_mysql&username=root&db=paxful
