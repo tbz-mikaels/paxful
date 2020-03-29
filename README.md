@@ -4,7 +4,7 @@
 
 2- Navigate to paxful directory which you recently cloned.
 
-3 Then run following command to create your local instance up and running: <br>
+3- Then run following command to create your local instance up and running: <br>
 
 <li><b>Build docker configuration and run the containers:</b></li>
 
