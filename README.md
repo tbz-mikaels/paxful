@@ -4,12 +4,13 @@
 
 2- Navigate to paxful directory which you recently cloned.
 
+    cp laravel-app/.env.example laravel-app/.env
+
 3- Then run following command to create your local instance up and running: <br>
 
 <li><b>Build docker configuration and run the containers:</b></li>
 
-    - docker-compose up -d
-    - cp laravel-app/.env.example laravel-app/.env
+    docker-compose up -d
 
 <li><b>Open bash/terminal to run more commands inside:</b></li>
 
