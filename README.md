@@ -8,7 +8,8 @@
 
 <li><b>Build docker configuration and run the containers:</b></li>
 
-    docker-compose up -d
+    - docker-compose up -d
+    - cp laravel-app/.env.example laravel-app/.env
 
 <li><b>Open bash/terminal to run more commands inside:</b></li>
 
@@ -19,7 +20,6 @@
     - composer install
     - php artisan storage:link
     - php artisan migrate --seed
-    - cp laravel-app/.env.example laravel-app/.env
     
 <li><b>Install JS dependencies:</b></li>
         
