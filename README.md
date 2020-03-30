@@ -2,7 +2,7 @@
 
     git clone https://github.com/tbz-mikaels/paxful.git
 
-2- Navigate to paxful directory which you recently cloned.
+2- Navigate to paxful directory which you recently cloned. Then run following command to create .env config file
 
     cp laravel-app/.env.example laravel-app/.env
 
